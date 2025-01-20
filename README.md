@@ -21,7 +21,7 @@ http://45.13.225.104:4347/api/v2/
 | Параметр  | Тип	| Обязательный | Описание |
 | ------------- | ------------- | ------------- | ------------- |
 | url  | string | да  | URL видео или фото из TikTok. |
-| download_content_type  | string | да  | Тип контента: VIDEO_ONLY или ORIGINAL. |
+| download_content_type  | string | нет | Тип контента: VIDEO_ONLY или ORIGINAL. По умолчанию ORIGINAL. |
 
 
 Пример запроса:
@@ -96,7 +96,7 @@ GET /stream/312132123123132.mp4 HTTP/1.1
 ```http
 POST /ping HTTP/1.1
 ```
-Пример ответа:
+Ответ:
 ```
 pong
 ```
