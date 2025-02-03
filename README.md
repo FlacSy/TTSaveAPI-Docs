@@ -46,6 +46,7 @@ Content-Type: application/json
 ```http
 HTTP/1.1 200 OK
 Content-Type: multipart/x-mixed-replace; boundary=simple_boundary
+Content-Meta: "Encoded Base64 json string"
 
 --simple_boundary
 Content-Type: video/mp4
@@ -67,7 +68,12 @@ Content-Disposition: attachment; filename="audio.mp3"
 
 --simple_boundary--
 ```
+**Content-Meta** хранит в себе зашифрованный JSON посредством использования шифра Base64.
 
+Пример расшифрованной Content-Meta:
+```json
+{"title": "Title", "desc": "Description"}
+```
 Коды ошибок:
 -	400: Некорректный запрос (отсутствует url).
 
